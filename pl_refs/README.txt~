@@ -1,0 +1,4 @@
+- how to define references (single and double) to scalar variables
+  and use them to modify their referents scalar_refs.pl and
+  scalar_ref_modification.pl
+- 
