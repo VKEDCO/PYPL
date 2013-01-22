@@ -75,7 +75,7 @@ print 'f(x) = x^5 - 5x - 5 = 0, on [1, 2], ' \
       'zero_02 = ', zero_02, ' f(zero_02) = ', poly_02(zero_02)
 
 ## print out f(x) = -x + 2, on [0, 10]
-zero_03 = half_interval_search(poly_03, 0, 10)
+zero_03 = half_interval_search(poly_03, 1, 10)
 print 'f(x) = -x + 2 = 0, on [0, 10], ', \
       'zero_03 = ', zero_03, ' f(zero_03) = ', poly_03(zero_03)
 
