@@ -1,15 +1,5 @@
 #!/usr/bin/perl
 
-##################################################
-## examples of operator m//.
-## - default pattern delimiters //
-## - other pattern delimiters
-## - advantage of using //
-## - interpolation of variables inside //
-## 
-## bugs to vladimir dot kulyukin at gmail dot com
-##################################################
-
 use strict;
 use warnings;
 
