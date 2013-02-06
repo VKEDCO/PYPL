@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/python
 
 #######################################################
 ## Examples of groups and backreferences and
