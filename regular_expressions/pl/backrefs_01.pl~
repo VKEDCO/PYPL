@@ -48,13 +48,14 @@ print "\$1 -> $1\n\$2 -> $2\n\$3 -> $3\n\$4 -> $4\n";
 
 ## Example 03
 ## Suppose we match ((\d)\+(\d))=(\d) against $txt_01.
-$txt_01 =~ /((\d)\+(\d))=(\d)/;
+$txt_01 =~ /((\d)\+(\d))=(\d)$/;
 
 ## Then the special variable alignment is:
-##  /((\d)\+(\d))=(\d)/
+##  /((\d)\+(\d))=(\d)$/
 ##  $1$2    $3    $4
 ## In other words, $1 is bound to '1+1',
 ## $2 is bound to '1' and $3 is bound to '1',
 ## $4 is bound to '2'.
 print "\nExample 03\n";
 print "\$1 -> $1\n\$2 -> $2\n\$3 -> $3\n\$4 -> $4\n"; 
+
