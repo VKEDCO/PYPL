@@ -112,7 +112,7 @@ print 'span = ', '(', $index_05, ', ', $index_05 + length($1), ')', "\n";
 
 #######################################################
 ## Match Pattern 04: Match pattern pat against
-## text txt case insensitively
+## the entire text txt
 ## 
 ## $txt =~ /pat/i;
 #######################################################
