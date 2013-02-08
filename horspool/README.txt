@@ -1,0 +1,1 @@
+PY and Perl implementation of the Horspool string matching algorithm.
