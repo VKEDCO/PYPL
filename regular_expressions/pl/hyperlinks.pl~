@@ -59,7 +59,7 @@ sub get_hyperlink_name {
 ## regex for a hyperlink's class
 my $class_re = 'class=\"(' .$non_empty_txt_re. ')\"';
 
-## sub that extracts the class of a hyperlink from a string using $class_re.
+## sub that extracts the class of a hyperlink from a string using $name_re.
 ## if there is a match, it returns a list of attribute/value pair ('class', <extracted match>).
 sub get_hyperlink_class {
   my $txt = shift();
