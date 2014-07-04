@@ -9,7 +9,7 @@ from fft_mult_poly import convolve_poly_split, convolve_poly, mult_poly
 
 ## poly01 = 9 - 10x + 7x^2 + 6x^3
 poly01 = [9, -10, 7, 6]
-## poly02 = -5 + 4x - 2x^2
+## poly02 = -5 + 4x - 2x^3
 poly02 = [-5, 4, 0, -2]
 ## poly01*poly2 = -45 + 86x - 75x^2 - 20x^3 + 44x^2 - 14x^5 - 12x^6
 
