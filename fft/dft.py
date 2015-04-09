@@ -6,7 +6,7 @@
 ##
 ## sample run:
 ## >>> a = [random.randint(0, 100) for i in range(8)]
-## >>> r = recursive_fft(a, 0.0001)
+## >>> r = recursive_fft(a)
 ## >>> a
 ## [47, 23, 69, 71, 62, 72, 70, 76]
 ## >>> r
@@ -14,7 +14,7 @@
 ## (16.11269837220808-37.183766184073576j), 6,
 ## (16.112698372208094+37.18376618407356j), (-29.99999999999999+52j),
 ## (-46.11269837220808+39.183766184073576j)]
-## >>> rr = recursive_inverse_fft(r, 0.0001)
+## >>> rr = recursive_inverse_fft(r, error=0.0001)
 ## >>> rr
 ## [(47+0j), (23+4.440892098500626e-15j), (69-1.1102230246251565e-16j), (71-3.3306690738754696e-15j),
 ## (62+0j),
@@ -22,6 +22,40 @@
 ##
 ## the second argument to recursive_fft and recursive_inverse_fft is an error value.
 ## it can be set to 0 or some small number.
+##
+## if you want to have a more explicit control over the output,
+## you can use the keywords omega and error. For example, if you run
+## MATLAB's fft on the above array (a), the output will be as follows:
+##
+##>> fft([47 23 69 71 62 72 70 76])
+## ans =
+## [490.00+0.00i  -46.11+39.18i  -30.00+52.00i   16.11+37.18i  6.00+0.00i 16.11-37.18i  -30.00-52.00i  -46.11-39.18i]
+##
+## Note that the signs in front of the imaginary components are different. This output
+## can be obtained by changing the second parameter, i.e., the omega function:
+##
+## >>> recursive_fft(ia, wf=omega2_with_error)
+## [490, (-46.112698372208094+39.18376618407356j), (-30.00000000000001+52j), (16.11269837220808+37.183766184073576j),
+## 6, (16.112698372208094-37.18376618407356j), (-29.99999999999999-52j), (-46.11269837220808-39.183766184073576j)]
+##
+## Note that the output is the same as in MATLAB (modulo rounding).
+##
+## The functions DFT and IDFT are the same as RECURSIVE_FFT and RECURSIVE_INVERSE_FFT, respectively, but are
+## defined because DFT and IDFT are more standard terms than recursive_fft.
+##
+## >>> ia = [47, 23, 69, 71, 62, 72, 70, 76]
+## >>> ffta = dft(ia)
+## >>> ffta
+## [490, (-46.112698372208094-39.18376618407356j), (-30.00000000000001-52j), (16.11269837220808-37.183766184073576j),
+## 6, (16.112698372208094+37.18376618407356j), (-29.99999999999999+52j), (-46.11269837220808+39.183766184073576j)]
+## >>> idft(ffta)
+## [(47+0j), (23+3.644871679054846e-15j), (69-1.1102230246251565e-16j), (71-2.9787378642797526e-15j), (62+0j),
+## (72+9.215800025434559e-17j), (70+1.1102230246251565e-16j), (76-7.582918150294395e-16j)]
+##
+## >>> ffta = dft(ia, wf=omega2_with_error, error=0.0001)
+## >>> idft(ffta, wf=omega2_with_error, error=0.0001)
+## [(47+0j), (23-4.440892098500626e-15j), (69+1.1102230246251565e-16j), (71+3.3306690738754696e-15j), (62+0j),
+## (72-8.881784197001252e-16j), (70-1.1102230246251565e-16j), (76+1.9984014443252818e-15j)]
 ##
 ## Author: Vladimir Kulyukin
 ## bugs to vladimir dot kulyukin at gmail dot com
@@ -102,10 +136,6 @@ def recursive_fft_aux(A, wf, error):
     Y_1 = recursive_fft_aux(A_1, wf, error)
     Y = Y_0 + Y_1
     delta = int(n/2)
-    ##print('A_0:' + str(A_0))
-    ##print('A_1:' + str(A_1))
-    ##print('Y: ' + str(Y))
-    ##print('delta: ' + str(delta))
     for k in range(0, delta):
         Y[k] = Y_0[k] + w * Y_1[k]
         Y[k + delta] = Y_0[k] - w * Y_1[k]
@@ -154,8 +184,8 @@ def recursive_inverse_fft_split(Y, wf=omega, error=0):
         imag.append(x.imag)
     return real, imag
 
-## slower version of DFT in O(n^2).
-def dft(a, wf=omega, error=0):
+## slower version of FFT in O(n^2).
+def iter_fft(a, wf=omega, error=0):
     rslt = []
     n = len(a)
     for k in range(n):
@@ -179,6 +209,8 @@ def get_odd_elements(a):
         rslt.append(a[i])
     return rslt
 
+## pad a with zeros at the right until the length of a is
+## an integral power of 2 and greater than 2.
 def pad_with_zeros(a):
     ln = len(a)
     padded_a = copy.copy(a)
@@ -189,3 +221,10 @@ def pad_with_zeros(a):
         if is_pow_of_2(len(padded_a)):
             return padded_a
 
+## a more standard name of recursive_fft.
+def dft(A, wf=omega, error=0):
+    return recursive_fft(A, wf=wf, error=error)
+
+## a more standard name of recursive_inverse_fft
+def idft(A, wf=omega, error=0):
+    return recursive_inverse_fft(A, wf=wf, error=error)
