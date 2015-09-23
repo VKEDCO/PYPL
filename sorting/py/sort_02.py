@@ -1,45 +1,78 @@
 #!/usr/bin/python
 
-## custom sorting operations
-## bugs to vladimir dot kulyukin at gmail dot com
-## 
-## output is
-## [1, 11, 2, 24, 3]
-## ['a', 'b', 'aa', 'bb', 'aaa', 'bbb']
-## before sorting two_d_list=[[1, 2, 3, 5], [4, 0, 1], [0, 0, 1, 0]]
-## after sorting two_d_list=[[0, 0, 1, 0], [4, 0, 1], [1, 2, 3, 5]]
+################################################
+#
+# illustrates basic sorting in Py.
+#
+# author: vladimir kulyukin
+#
+#################################################
 
-numbers = [11, 1, 2, 24, 3]
-## convert each number into string and sort
-numbers.sort(key=str);
-## lst is destructively modified; sort() sorts in place
-print numbers
+## you can use the sorted() function to sort understructively in Py. This
+## is similar to PL sort, except it does not do the lexicographic
+## sorting but numerical.
 
-## convert each string to its length and sort
-words = ['aa', 'bb', 'a', 'aaa', 'b', 'bbb']
-words.sort(key=len)
-print words
+def sorting_test_0():
+    print "**** SORTING TEST 0 ****"
+    numbers = [2, 1, 3, 4, -1]
+    print "numbers before sort:\t\t", numbers
+    sorted_numbers = sorted(numbers)
+    print "sorted_ numbers:    \t\t", sorted_numbers
+    print "numbers after sort:\t\t", numbers
+    print
 
-two_d_list  = [[1, 2, 3, 5], [4, 0, 1], [0, 0, 1, 0]]
+## it is also possible to sort with the sort method of the list class.
+## do not do: sorted_numbers = lst.sort(), because sort does not return anything;
+## it destructively modifies the list
+## if you to preserve the original list, you can make a copy of it &
+## then user the sort method on the copy.
+## numbers = [2, 1, 3, 4, -1]
+## numbers_copy = numbers[:]
+## numbers_copy.sort()
+def sorting_test_0a():
+    print "**** SORTING TEST 0a ****"
+    numbers = [2, 1, 3, 4, -1];
+    print "numbers before sort:\t\t", numbers
+    numbers.sort();
+    ## numbers list is destructively modified; sort() sorts in place
+    print "numbers after sort:\t\t", numbers
+    print
 
-## define custom comparator
-## comparator compares lst_01 and list_02 by
-## length.
-def list_sum_cmp(lst_01, lst_02):
-    sum_01, sum_02 = sum(lst_01), sum(lst_02)
-    if sum_01 < sum_02:
-        return -1
-    elif sum_01 > sum_02:
-        return 1
-    else:
-        return 0
+def sorting_test_1():
+    print "**** SORTING TEST 1 ****"
+    numbers = [11, 2, 1, 22, 3, 4, -1]
+    print "numbers before sort:\t\t", numbers
+    numbers.sort();
+    ## numbers list is destructively modified; sort() sorts in place
+    print "numbers after sort:\t\t", numbers
+    print
+    
+## ASCII SORTS    
+def sorting_test_2():
+    print "**** SORTING TEST 2 ****"
+    str_numbers = ['2', '1', '3', '4', '-1']
+    print "str_numbers before sort:\t\t", str_numbers
+    sorted_str_numbers = sorted(str_numbers)
+    print "sorted_str_numbers:     \t\t", sorted_str_numbers
+    print "str_numbers after sort: \t\t", str_numbers
+    print
 
-print 'before sorting two_d_list=' + str(two_d_list)
-two_d_list.sort(list_sum_cmp)
-print 'after sorting two_d_list=' + str(two_d_list)
+def sorting_test_3():
+    print "**** SORTING TEST 3 ****"
+    str_numbers = ['11', '2', '1', '22', '3', '4', '-1']
+    print "str_numbers before sort:\t\t", str_numbers
+    sorted_str_numbers = sorted(str_numbers)
+    print "sorted_str_numbers:     \t\t", sorted_str_numbers
+    print "str_numbers after sort: \t\t", str_numbers
+    print
 
+sorting_test_0();
+sorting_test_0a();
+sorting_test_1();
+sorting_test_2();
+sorting_test_3();
 
-
+    
 
 
 
