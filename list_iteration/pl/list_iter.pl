@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+## Your thinking is like a camel driver,
+## and you are the camel:
+## it drives you in every direction under its bitter control.
+## -- Rumi
+
 ## If you are on linux, do "which perl" to ensure
 ## that the perl interpreter is installed in /usr/bin/perl.
 ## Change the shabang statement above if necessary.
