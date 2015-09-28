@@ -1,6 +1,11 @@
 use strict;
 use warnings;
 
+## Your thinking is like a camel driver,
+## and you are the camel:
+## it drives you in every direction under its bitter control.
+## -- Rumi
+
 #########################################################
 ##
 ## grep syntax is grep PREDICATE, LIST, where
@@ -17,7 +22,7 @@ use warnings;
 ## In a scalar context, grep returns the number of
 ## elements in LIST for which PREDICATE is true.
 ##
-## bugs to vladimir dot kulyukin at gmail dot com
+## author: vladimir kulyukin
 ###########################################################
 
 my @numbers = (1..11);
