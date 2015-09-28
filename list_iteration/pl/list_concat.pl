@@ -3,11 +3,15 @@
 use strict;
 use warnings;
 
+## Your thinking is like a camel driver,
+## and you are the camel:
+## it drives you in every direction under its bitter control.
+## -- Rumi
+
 ##########################################################
 ## shows how to concatenation 2 or more lists in PL
 ## author: vladimir kulyukin
 ##
-## the camel always delivers...
 ##########################################################
 
 ## The output is
