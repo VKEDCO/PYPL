@@ -1,4 +1,14 @@
-## example of subroutine refs
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+
+# Your thinking is like a camel driver,
+# and you are the camel:
+# it drives you in every direction under its bitter control.
+# -- Rumi
+
+## examples of subroutine refs
 ## author: Vladimir Kulyukin
 
 use strict;
