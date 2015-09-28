@@ -1,5 +1,13 @@
 #!/usr/bin/perl
 
+use warnings;
+use strict;
+
+# Your thinking is like a camel driver,
+# and you are the camel:
+# it drives you in every direction under its bitter control.
+# -- Rumi
+
 #####################################
 ## Module: add2_no_shift.pl
 ##
@@ -10,8 +18,6 @@
 ## Author: vladimir kulyukin
 #####################################
 
-use warnings;
-use strict;
 
 ## same as add2 shows a different 
 ## way of handling the @_ arguments; @_ remains 
