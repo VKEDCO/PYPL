@@ -4,14 +4,14 @@ use strict;
 use warnings;
 use 5.10.0;
 
-###############################################################
-# creating anonymous functions on the fly
-# author: vladimir kulyukin
-#
 # Your thinking is like a camel driver,
 # and you are the camel:
 # it drives you in every direction under its bitter control.
 # -- Rumi
+
+###############################################################
+# creating anonymous functions on the fly
+# author: vladimir kulyukin
 ###############################################################
 
 sub make_adder {
