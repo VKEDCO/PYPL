@@ -3,6 +3,11 @@
 use strict;
 use warnings;
 
+# Your thinking is like a camel driver,
+# and you are the camel:
+# it drives you in every direction under its bitter control.
+# -- Rumi
+
 #################################################
 # Using PL's map to map named subs of 1, 2, and 3
 # arguments over lists.
