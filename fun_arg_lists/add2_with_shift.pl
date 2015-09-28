@@ -1,5 +1,13 @@
 #!/usr/bin/perl
 
+use warnings;
+use strict;
+
+# Your thinking is like a camel driver,
+# and you are the camel:
+# it drives you in every direction under its bitter control.
+# -- Rumi
+
 #####################################
 ## Module: add2_with_shift.pl
 ##
@@ -7,11 +15,8 @@
 ## out of @_, which causes @_ to be
 ## destructively modified.
 ##
-## Author: vladimir kulyukin
+## author: vladimir kulyukin
 #####################################
-
-use warnings;
-use strict;
 
 sub add2ws {
     ## my is a keyword which makes the scalars $x and $y local to
