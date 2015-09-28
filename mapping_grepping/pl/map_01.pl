@@ -1,6 +1,11 @@
 use strict;
 use warnings;
 
+## Your thinking is like a camel driver,
+## and you are the camel:
+## it drives you in every direction under its bitter control.
+## -- Rumi
+
 ################################################
 #
 # map EXPRESSION, LIST
@@ -8,7 +13,7 @@ use warnings;
 # to $_ and, unlike in grep, returns a result
 # the returned result is placed in LIST.
 #
-# bugs to vladimir dot kulyukin at gmail dot com
+# author: vladimir kulyukin
 #################################################
 
 my @numbers = (1..10);
