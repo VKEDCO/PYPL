@@ -3,6 +3,11 @@
 use strict;
 use warnings;
 
+# Your thinking is like a camel driver,
+# and you are the camel:
+# it drives you in every direction under its bitter control.
+# -- Rumi
+
 #####################################################
 # illsustrates the use of map EXPRESSION, LIST
 # EXPRESSION is an expression that applies
