@@ -2,8 +2,9 @@
 
 ###############################################
 # join examples
-# bugs to vladimir dot kulyukin at gmail dot com
+# author: vladimir kulyukin
 ###############################################
+
 use strict;
 use warnings;
 
@@ -32,4 +33,3 @@ while ( $input = <STDIN> ) {
   }
 }
 print join('; ', @array_of_inputs), "\n";
-
