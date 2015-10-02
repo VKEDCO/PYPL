@@ -2,8 +2,7 @@
 
 #######################################################
 ## Examples of split subroutine in Perl.
-##
-## bugs to vladimir dot kulyukin at gmail dot com
+## author: vladimir kulyukin
 #######################################################
 
 use strict;
@@ -142,18 +141,9 @@ sub split_test_06 {
   print "\n";
 }
 
-split_test_01();
-split_test_02();
-split_test_03();
-split_test_04();
-split_test_05();
-split_test_06();
-
-
-
-
-
-
-
-
-
+#split_test_01();
+#split_test_02();
+#split_test_03();
+#split_test_04();
+#split_test_05();
+#split_test_06();
