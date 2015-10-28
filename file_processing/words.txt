@@ -1,0 +1,9 @@
+abracadabra
+python
+perl
+c
+poetry
+music
+algebra
+wavelets
+alchemy
