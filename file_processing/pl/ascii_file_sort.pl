@@ -2,21 +2,22 @@
 
 ###################################################
 ## slurp lines from file of numbers 
-## and sort them as strings.
-## 
+## and sort them lexicographically as strings using
+## the default sorting algorithm.
 ## To run:
-## >> nmbr_sort.pl unsorted_numbers.txt
-##
-## bugs to vladimir dot kulyukin at gmail dot com
+## >> perl ascii_file_sort.pl unsorted_numbers.txt
+## @author: vladimir kulyukin
 ###################################################
 use strict;
 use warnings;
 
+# 1. get the 0th command line argument
 my $infile = shift;
-open(FH, '<', $infile) or die $!;
-my @lines = <FH>;
+# 2. open the file for reading
+open(IN, '<', $infile) or die $!;
+# 3. read lines, sort, and print
+my @lines = <IN>;
 print sort { $a cmp $b } @lines;
-
 
 
 
