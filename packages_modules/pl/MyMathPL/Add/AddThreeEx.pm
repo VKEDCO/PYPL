@@ -3,8 +3,8 @@
 package MyMathPL::Add::AddThreeEx;
 
 ## this is the root directory where MyMathPL folder
-## is placed.
-use lib "d:/Dropbox/teaching/PythonPerl/s13/lectures/18/";
+## is placed. Change it accordingly.
+use lib 'C:/Users/Vladimir/programming/pl/MyMathPL/';
 
 use strict;
 use warnings;
@@ -26,6 +26,4 @@ sub info {
 }
 
 1;
-
-
 
