@@ -1,30 +1,38 @@
 #!/usr/bin/perl
 
-## bugs to vladimir dot kulyukin at gmail dot com
+######################################
+# @author: vladimir kulyukin
+######################################
 
-## change this root accordingly.
-use lib "/home/vladimir/Dropbox/teaching/PythonPerl/s13/lectures/18/";
+use lib 'C:/Users/Vladimir/programming/pl/';
 use warnings;
 use strict;
-use MyMathPL::Mult::MultTwo;
-use MyMathPL::Mult::MultFour;
+use MyMathPL::Subt::SubtTwo;
+use MyMathPL::Subt::SubtThree;
+use MyMathPL::Subt::SubtFour;
 
-############# Testing MyMathPL::Mult::MultTwo ######################
-MyMathPL::Mult::MultTwo::info();
-my $mult2_n01 = MyMathPL::Mult::MultTwo::mult2(10, 12); 
-my $mult2_n02 = MyMathPL::Mult::MultTwo::mult2(10.5, 12.5);
-print $mult2_n01, "\n";
-print $mult2_n02, "\n";
+my $diff1 = 0;
+my $diff2 = 0;
+############# Testing MyMathPL::Subt::SubtTwo ######################
+MyMathPL::Subt::SubtTwo::info();
+$diff1 = MyMathPL::Subt::SubtTwo::subt2(12, 10);
+$diff2 = MyMathPL::Subt::SubtTwo::subt2(15.5, 10.2);
+print $diff1, "\n";
+print $diff2, "\n";
 print "\n";
 
-############# Testing MyMathPL::Mult::MultFour ######################
-MyMathPL::Mult::MultFour::info();
-my $mult4_n01 = MyMathPL::Mult::MultFour::mult4(10, 12, 15, 20);
-my $mult4_n02 = MyMathPL::Mult::MultFour::mult4(10.5, 12.5, 15.5, 20.5); 
-print $mult4_n01, "\n";
-print $mult4_n02, "\n";
+############# Testing MyMathPL::Subt::SubtThree ######################
+MyMathPL::Subt::SubtThree::info();
+$diff1 = MyMathPL::Subt::SubtThree::subt3(15, 5, 3);
+$diff2 = MyMathPL::Subt::SubtThree::subt3(15.5, 5.5, 3.5);
+print $diff1, "\n";
+print $diff2, "\n";
 print "\n";
 
-
-
-
+############# Testing MyMathPL::Subt::SubtFour ######################
+MyMathPL::Subt::SubtFour::info();
+$diff1 = MyMathPL::Subt::SubtFour::subt4(15, 5, 3, 2);
+$diff2 = MyMathPL::Subt::SubtFour::subt4(15.5, 5.5, 3.5, 2.5);
+print $diff1, "\n";
+print $diff2, "\n";
+print "\n";
