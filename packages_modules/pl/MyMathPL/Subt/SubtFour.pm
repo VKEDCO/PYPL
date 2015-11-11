@@ -4,8 +4,7 @@ package MyMathPL::Subt::SubtFour;
 
 ## this is the root directory where MyMathPL folder
 ## is placed.
-use lib "d:/Dropbox/teaching/PythonPerl/s13/lectures/18/";
-
+use lib 'C:/Users/Vladimir/programming/pl/MyMathPL/';
 
 use strict;
 use warnings;
@@ -23,6 +22,7 @@ sub info {
 }
 
 1;
+
 
 
 
