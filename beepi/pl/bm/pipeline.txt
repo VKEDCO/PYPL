@@ -1,0 +1,6 @@
+perl timestamp_notes_for_freq.pl --f 44100 --d ..\..\..\research\beePi\audio_files\test_data\
+    | tab_timestamped_note_records.pl
+    | filter_tabbed_records.pl 3 15 16
+    | compute_note_freq_toops.pl
+    | top_n.pl 50
+    | gen_octave_histo.pl > oct_44100_histo.pm
