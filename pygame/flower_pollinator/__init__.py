@@ -4,4 +4,5 @@ __all__ = [
     Moth,
     Flower,
     Score,
+    Health
 ]
