@@ -1,0 +1,28 @@
+[General]
+pi_name = developmentPi
+server_ip = 192.168.43.1
+backup_server_ip = 192.168.10.10
+ftp_simple_port = 8888
+ftp_advanced_port = 8889
+udp_port = 8890
+ftp_user = beepi
+ftp_password = beepi
+auto_start = off
+min_free_mb = 500
+
+[Saving]
+archive_file_count = 200
+archive_check_interval = 660
+use_compressed_archives = y
+base_data_directory = /home/pi/recordedData/
+temperature_save_filename = temperatures.txt
+log_save_filename = log.txt
+backup_save_folder_name = backups
+photo_save_folder_name = photos
+sound_save_folder_name = sounds
+
+[Sampling]
+temperature_sampling_interval = 600
+picture_sampling_interval = 1200
+sound_sampling_interval = 900
+sound_sample_length = 30
