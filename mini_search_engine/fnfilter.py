@@ -1,4 +1,4 @@
- Mini Search Engine: fnfilter.TextFileFilter
+## Mini Search Engine: fnfilter.TextFileFilter
 ### Module: fnfilter.py ###                                             
 ##  Description: TextFileFilter class
 ##  of the Mini Search Engine project
