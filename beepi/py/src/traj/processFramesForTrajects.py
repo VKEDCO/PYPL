@@ -91,4 +91,4 @@ print len(TRAJECTS)
 for t in TRAJECTS[:20]:
     print len(t.contours), 'contours'
        
-utils.drawAndSaveTrajectsInFiles(TRAJECTS, ORIG_FRAME, DIRECT)
+Utils.drawAndSaveTrajectsInFiles(TRAJECTS, ORIG_FRAME, DIRECT)
