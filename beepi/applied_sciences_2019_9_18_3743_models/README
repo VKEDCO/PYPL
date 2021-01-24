@@ -1,0 +1,57 @@
+1) For general background info, see V. Kulyukin, S. Mukherjee.
+"On Video Analysis of Omnidirectional Bee Traffic: Counting Bee Motions with Motion
+ Detection and Image Classification." Applied Sciences, 2019, 9(18), 3743;
+ https://doi.org/10.3390/app9183743; the article's pdf, ApplSci_2019_9_18_3743.pdf,
+ is included in the archive.
+
+2) The file beepi_convents.py in source/ contains the topology of each net we trained,
+tested and validated for the research reported in the article; the pdf contains
+the links to our image datasets.
+
+3) The TFLearn files with the trained models are available at https://usu.app.box.com/s/v2kty7tujspf04phpbjpt2hnj595yify.
+If you download them, put them into models/ to run the code.
+
+4) yb.png, nb.png, yb2.png, nb2.png in img/ contain 4 sample images;
+   yb.png and yb2.png contain bees; nb.png and nb2.png don't.
+
+5) The following files contain examples of how to load and run each model on
+the individual images:
+
+  - beepi_convnetgs1_1s.py, beepi_convnetgs1_2s.py;
+  - beepi_convnetgs2_1s.py, beepi_convnetgs2_2s.py;
+  - beepi_convnetgs3_1s.py, beepi_convnetgs3_2s.py;
+  - beepi_convnetgs4_1s.py, beepi_convnetgs4_2s.py;
+  - beepi_convnetgs5_1s.py, beepi_convnetgs3_2s.py;
+  - beepi_vgg16_1s.py, beepi_vgg16_2s.py;
+  - beepi_resnet32_1s.py, beepi_resnet32_2s.py;
+  - beepi_convnet1_1s.py, beepi_convnet1_2s.py;
+  - beepi_convnet2_1s.py, beepi_convnet2_2s.py;
+  - beepi_convnet3_1s.py, beepi_convnet3_2s.py;
+  - beepi_convnet4_1s.py, beepi_convnet4_2s.py;
+  - beepi_convnet5_1s.py, beepi_convnet5_2s.py;
+  - beepi_convnet6_1s.py, beepi_convnet6_2s.py;
+  - beepi_convnet7_1s.py, beepi_convnet7_2s.py;
+  - beepi_convnet8_1s.py, beepi_convnet8_2s.py;
+  - beepi_convnet9_1s.py, beepi_convnet9_2s.py;
+  - beepi_convnet10_1s.py, beepi_convnet10_2s.py.
+
+6) The bee and no-bee probabilities in the comments in the files in 5) are not
+true mathematical probabilities in that they don't add up to 1. They are
+numbers (e.g., softmax crossentropy) assigned by a trained net to BEE
+and NO-BEE categories. Thus, the output like
+
+bee_probability    = 0.0001715152757242322
+no_bee_probability = 0.007666190154850483
+
+means that a specific net recognized neither BEE nor NO-BEE in a given image.
+On the other hand, the output like
+
+bee_probability    = 0.9240301251411438
+no_bee_probability = 0.07596990466117859
+
+means that a specific net categorized a given image as a BEE.
+
+7) The models persisted in models/ have been trained, tested, and validated
+in Python 3.6.7, tensorflow 1.13.1 on Ubuntu 18.04LTS.
+
+Vladimir Kulyukin
